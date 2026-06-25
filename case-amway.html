@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amway — Design System &amp; Token Architecture — Heloisa Romao</title>
+<meta name="description" content="Architecting a primitive-to-semantic token system and formal governance process adopted across 15+ teams at Amway.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/case.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-mark">Heloisa Romao<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html#work" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-header">
+  <div class="case-hero-banner">
+    <img src="images/covers/amway-cover.png" alt="Amway wordmark styled with wellness product photography." data-parallax="0.12">
+  </div>
+  <div class="wrap">
+    <a href="index.html#work" class="case-back">← All work</a>
+    <div class="case-title-row">
+      <div>
+        <p class="label">Design systems · Governance</p>
+        <h1>Amway — Design system &amp; token architecture</h1>
+        <p class="lede">A primitive-to-semantic token system and a formal governance process that took component consistency from a per-team guess to a shared standard, adopted across 15+ teams.</p>
+      </div>
+      <dl class="spec-sheet">
+        <div class="spec-row"><dt>Role</dt><dd>Senior UI/UX Designer</dd></div>
+        <div class="spec-row"><dt>Company</dt><dd>Amway, Remote</dd></div>
+        <div class="spec-row"><dt>Scope</dt><dd>CRM, ordering, product-discovery systems</dd></div>
+        <div class="spec-row"><dt>Reach</dt><dd>15+ teams, North America &amp; EMEA</dd></div>
+        <div class="spec-row"><dt>Tools</dt><dd>Figma, FigJam, component libraries</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">The brief</p>
+    <div class="case-section-body">
+      <h2>15+ teams, one set of components, zero shared rules</h2>
+      <p>Amway's digital products span enterprise CRM, ordering, and discovery tools used by Amway Business Owners across North America and EMEA, built by agile product teams spread across Michigan, California, Singapore, and beyond. Each team had its own components, its own spacing decisions, its own color usage, because there was no single source of truth to work from.</p>
+      <p>The result wasn't just visual inconsistency. It was duplicated work: teams were quietly rebuilding the same patterns slightly differently, and nobody had a reliable way to know which version was current.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">Approach</p>
+    <div class="case-section-body">
+      <h2>Token architecture first, governance second</h2>
+      <p>Fixing this needed more than a shared component library — it needed a structural layer underneath it. I architected the system in two parts:</p>
+      <ul class="decision-list">
+        <li>
+          <h4>Primitive tokens</h4>
+          <p>The raw values — color, spacing, type scale — defined once, with no product or brand meaning attached yet.</p>
+        </li>
+        <li>
+          <h4>Semantic tokens</h4>
+          <p>Built on top of the primitives, named for what they <em>mean</em> in product (e.g. <code>color-action-primary</code>, not <code>blue-500</code>), so a token's purpose stayed legible to any team using it, and updates could propagate without every team hunting down raw hex values.</p>
+        </li>
+      </ul>
+      <p style="margin-top:20px;">That structure is what made the system extensible: a future rebrand or theme change could happen at the primitive layer without every team's components needing to be rebuilt by hand.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">Governance</p>
+    <div class="case-section-body">
+      <h2>A real process, not a one-time cleanup</h2>
+      <p>A token system only stays useful if it's maintained, so I put a formal governance process around it:</p>
+      <ul class="challenge-list">
+        <li><span class="challenge-num">01</span><p><strong>Versioning</strong> — every change to the system shipped as a tracked version, so teams could see exactly what changed and when.</p></li>
+        <li><span class="challenge-num">02</span><p><strong>Deprecation</strong> — outdated components and tokens were formally marked deprecated rather than silently left in place, with a clear timeline before removal.</p></li>
+        <li><span class="challenge-num">03</span><p><strong>Migration plans</strong> — each deprecation shipped with a concrete path for teams to move to the new pattern, reducing the drift that kills most design systems within a year.</p></li>
+      </ul>
+      <figure class="case-figure">
+        <img src="https://static.wixstatic.com/media/bd81fe_7c95c29d28364ec5b4e3f69ae2aa4c09~mv2.jpg" alt="FigJam whiteboard mapping user flows and research for the Amway design system.">
+        <figcaption>FigJam — mapping flows before formalizing components.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">In practice</p>
+    <div class="case-section-body">
+      <h2>Where the system actually had to hold up</h2>
+      <ul class="decision-list">
+        <li>
+          <h4>Responsive thinking</h4>
+          <p>Every component was specified across screen dimensions, with the responsive behavior documented alongside the ticket, not left for engineering to interpret.</p>
+        </li>
+        <li>
+          <h4>Development handoff</h4>
+          <p>Figma components were organized top-to-bottom to mirror real component hierarchy, so engineers could find what they needed without a walkthrough.</p>
+        </li>
+        <li>
+          <h4>Shared libraries</h4>
+          <p>Built and maintained Figma libraries with consistent typography and components, validated through usability testing rather than internal opinion alone.</p>
+        </li>
+      </ul>
+      <div class="figure-grid">
+        <figure class="case-figure">
+          <img src="https://static.wixstatic.com/media/bd81fe_e9466bf588ec47429bc4d1518438f655~mv2.jpg" alt="Responsive design documentation across screen sizes.">
+          <figcaption>Responsive specification across breakpoints.</figcaption>
+        </figure>
+        <figure class="case-figure">
+          <img src="https://static.wixstatic.com/media/bd81fe_ee942cbe39cd45b9b4884a28360e09fb~mv2.png" alt="Organized component hierarchy for development handoff.">
+          <figcaption>Component hierarchy — organized for handoff.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">Outcome</p>
+    <div class="case-section-body">
+      <h2>One system, governed and adopted, not just published</h2>
+      <p>The token architecture and governance process were adopted across 15+ internal teams in North America and EMEA, replacing ad hoc, team-by-team component decisions with a single, versioned source of truth.</p>
+      <div class="metrics-row">
+        <div class="metric-cell">
+          <div class="metric-num">15+</div>
+          <div class="metric-label">Teams adopting the system</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">2</div>
+          <div class="metric-label">Token layers — primitive &amp; semantic</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">↓</div>
+          <div class="metric-label">System drift via versioning &amp; migration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-next">
+  <div class="wrap">
+    <div>
+      <p class="label case-next-label">Next case study</p>
+      <h2>Ezlogbook</h2>
+    </div>
+    <a href="case-ezlogbook.html" class="btn primary">View case study <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none; margin-top:0; padding-top:0;">
+      <span>© 2026 Heloisa Romao</span>
+      <span>
+        <a href="mailto:contatoheloisaromao@gmail.com">contatoheloisaromao@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a href="http://www.linkedin.com/in/heloisa-romao" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/motion.js"></script>
+</body>
+</html>
