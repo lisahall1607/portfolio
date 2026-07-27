@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rivet: Design System &amp; Figma Component Library | Heloisa Romao</title>
+<meta name="description" content="Building a token-first design system from scratch in Figma. Primitive-to-semantic color architecture, light/dark theming, and a 14-component library with full variant coverage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/case.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="/" class="nav-mark">Heloisa Romao<span>.</span></a>
+    <div class="nav-links">
+      <a href="/#work" class="active">Work</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-header">
+  <div class="case-hero-banner">
+    <img src="/images/covers/rivet-cover.png" alt="Rivet design system cover showing color tokens and component variants in Figma." data-parallax="0.12">
+  </div>
+  <div class="wrap">
+    <a href="/#work" class="case-back">← All work</a>
+    <div class="case-title-row">
+      <div>
+        <p class="label">Design systems · Figma craft</p>
+        <h1>Rivet: Design system &amp; Figma component library</h1>
+        <p class="lede">A token-first design system built from scratch in Figma for a focused-team SaaS product: primitive-to-semantic color architecture, light and dark theming, and a 14-component library with full variant coverage.</p>
+      </div>
+      <dl class="spec-sheet">
+        <div class="spec-row"><dt>Role</dt><dd>Product Designer</dd></div>
+        <div class="spec-row"><dt>Product</dt><dd>Rivet, SaaS (concept)</dd></div>
+        <div class="spec-row"><dt>Scope</dt><dd>Tokens, styles, 14 components</dd></div>
+        <div class="spec-row"><dt>Theming</dt><dd>Light &amp; dark</dd></div>
+        <div class="spec-row"><dt>Tools</dt><dd>Figma variables, Dev Mode</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">The brief</p>
+    <div class="case-section-body">
+      <h2>A product with no shared visual language yet</h2>
+      <p>Rivet needed a foundation before it needed more screens. I built this as a from-scratch design system exercise, held to the same bar a production system has to clear: a real token architecture, not just a matching set of colors, and components built to survive change rather than one-off screens.</p>
+      <p>The goal wasn't a mood board. It was something an engineering team could actually build against: variables with correct scopes and Dev Mode code syntax, components with real variant logic and exposed properties, and a file organized the way a design system should be, not the way a single mockup file is.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">Approach</p>
+    <div class="case-section-body">
+      <h2>Primitives, then semantics, then components</h2>
+      <p>Same structure I use on every token system: raw values first, meaning second, components last.</p>
+      <ul class="decision-list">
+        <li>
+          <h4>Primitive tokens</h4>
+          <p>Raw color scales, a spacing scale, and a radius scale, with <code>scopes = []</code> so they're hidden from every property picker. Designers only ever touch the semantic layer above them.</p>
+        </li>
+        <li>
+          <h4>Semantic tokens</h4>
+          <p>Role-based names aliasing those primitives, like <code>bg/surface</code>, <code>text/secondary</code>, <code>accent/hover</code>, mirrored across matching Light and Dark collections so switching themes is never a renaming exercise.</p>
+        </li>
+      </ul>
+      <p style="margin-top:20px;">Only once the token layer held up did components start. Every fill, stroke, gap, padding, and radius is bound to a variable, never a hardcoded value.</p>
+      <figure class="case-figure">
+        <img src="/images/case-rivet/rivet-foundations.png" alt="Rivet Figma foundations page showing light and dark color palettes, typography scale, spacing and radius scale, and elevation styles, all bound to variables.">
+        <figcaption>Foundations page: color, type, spacing, and elevation, all token-bound.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">Figma craft</p>
+    <div class="case-section-body">
+      <h2>Where the file had to hold up, not just look right</h2>
+      <p>This project was as much about Figma technique as visual design. Every one of the 14 components uses <code>combineAsVariants</code> with a real variant matrix (Style × Size, State, Value), exposes component properties (text, boolean, and instance-swap) wired to the layers they actually control, and sits inside auto layout so nothing breaks when content changes.</p>
+      <ul class="challenge-list">
+        <li><span class="challenge-num">01</span><p><strong>Single-mode collections:</strong> the Figma plan this started on doesn't support multiple modes per collection, so light and dark theming lives in two parallel semantic collections with identical variable names, preserving the same alias architecture a two-mode collection would give.</p></li>
+        <li><span class="challenge-num">02</span><p><strong>Verified in phases:</strong> foundations were built and screenshot-checked before a single component was started, so nothing got built on unverified ground.</p></li>
+        <li><span class="challenge-num">03</span><p><strong>Knowing what to keep:</strong> after upgrading to a higher plan mid-project, the two-collection theming approach stayed exactly as designed. It was already sound, and re-deriving it would have meant undoing good work for no real gain.</p></li>
+      </ul>
+      <div class="figure-grid">
+        <figure class="case-figure">
+          <img src="/images/case-rivet/rivet-button.png" alt="Rivet Button component set in Figma showing 12 variants across four styles and three sizes, each bound to semantic color tokens.">
+          <figcaption>Button: 12 variants, Label and Show Icon properties exposed.</figcaption>
+        </figure>
+        <figure class="case-figure">
+          <img src="/images/case-rivet/rivet-modal.png" alt="Rivet Modal component in Figma showing Small, Medium, and Large size variants with elevation styling bound to design tokens.">
+          <figcaption>Modal: three size variants, elevation via effect styles.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="wrap case-section-inner reveal">
+    <p class="case-section-label">Outcome</p>
+    <div class="case-section-body">
+      <h2>A system, not a mockup</h2>
+      <p>The result is a Figma file an engineering team could hand off from directly: tokens with real Dev Mode code syntax, components with editable properties instead of one-off frames, and a theming model that scales without a rebuild.</p>
+      <div class="metrics-row">
+        <div class="metric-cell">
+          <div class="metric-num">109</div>
+          <div class="metric-label">Tokens across 3 variable collections</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">14</div>
+          <div class="metric-label">Components, 84 variants total</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">2</div>
+          <div class="metric-label">Themes from one shared alias layer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-next">
+  <div class="wrap">
+    <div>
+      <p class="label case-next-label">Back to the start</p>
+      <h2>See all case studies</h2>
+    </div>
+    <a href="/#work" class="btn primary">View all work <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none; margin-top:0; padding-top:0;">
+      <span>© 2026 Heloisa Romao</span>
+      <span>
+        <a href="mailto:contatoheloisaromao@gmail.com">contatoheloisaromao@gmail.com</a>
+        &nbsp;·&nbsp;
+        <a href="http://www.linkedin.com/in/heloisa-romao" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/motion.js"></script>
+</body>
+</html>
